@@ -1,0 +1,1 @@
+运行后剪切板内容直接放入bin/x64/Debug/MacAddress.txt

@@ -1,0 +1,21 @@
+# Visual Studio 临时文件
+**/.suo
+**/.user
+**/.userosscache
+**/.sln.docstates
+
+# Visual Studio 生成文件
+obj/
+
+# 忽略 .vs 文件夹
+.vs/
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+
+# 其他临时文件
+Thumbs.db
+Desktop.ini
+
