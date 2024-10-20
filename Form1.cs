@@ -27,9 +27,10 @@ namespace AuthorizationManager
             string hardwareFingerprint = cpuId + motherboardSerialNumber;
 
             string encryptedFingerprint = EncryptionHelper.Encrypt(hardwareFingerprint);
+            string base64Encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(encryptedFingerprint));
 
             //复制到剪贴板
-            Clipboard.SetText(encryptedFingerprint);
+            Clipboard.SetText(base64Encoded);
 
             DialogResult result = MessageBox.Show("success");
 
