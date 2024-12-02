@@ -11,9 +11,10 @@ namespace AuthorizationManager
 {
     internal class EncryptionHelper
     {
-        private static string SerialNumber = Form1.GetMotherboardSerialNumber().Substring(0,16);
-        private static readonly byte[] Key = Encoding.UTF8.GetBytes(SerialNumber); // 16, 24, or 32 bytes
-        private static readonly byte[] IV = Encoding.UTF8.GetBytes(SerialNumber); // 16 bytes
+        private static string deviceCode = Form1.GetCpuId().Substring(0,8);
+        private static string extendedDeviceCode = deviceCode + deviceCode;
+        private static readonly byte[] Key = Encoding.UTF8.GetBytes(extendedDeviceCode); // 16, 24, or 32 bytes
+        private static readonly byte[] IV = Encoding.UTF8.GetBytes(extendedDeviceCode); // 16 bytes
 
         public static string Encrypt(string plainText)
         {
